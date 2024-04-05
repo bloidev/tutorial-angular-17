@@ -1,0 +1,11 @@
+<nav class="bg-slate-900 p-4 flex flex-row justify-between">
+    <h4 class="font-bold text-slate-100">Bloidev</h4>
+
+    <!-- <input type="checkbox" #themeToggleInput (change)="onToggleInput()"/> -->
+    <mat-slide-toggle (change)="onToggleInput()" #themeToggleInput> {{theme()}} </mat-slide-toggle>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+</nav>

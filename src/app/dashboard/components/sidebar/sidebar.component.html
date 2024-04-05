@@ -1,0 +1,11 @@
+<div class="w-[240px] bg-slate-800 h-screen p-4">
+    <ul class="flex flex-col gap-2 my-3">
+        <li *ngFor="let item of menuItems" >
+            <a href="{{ item.link }}" class="transition-colors block p-2 text-slate-100 bg-slate-500 hover:bg-slate-700 rounded">{{ item.title }}</a>
+        </li>
+    </ul>
+    <div class="rounded-md text-base bg-slate-900 p-4 text-center text-slate-100">
+        Versión 1.0.0
+        by Bloidev
+    </div>
+</div>

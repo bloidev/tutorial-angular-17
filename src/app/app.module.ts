@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { ResaltarDirective } from './directives/app.directive';
 import { SharedModule } from './shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
+import { DashboardModule } from './dashboard/dashboard.module';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    DashboardModule,
+    SharedModule,
+    MatSlideToggleModule
   ],
   providers: [
     provideAnimationsAsync()
