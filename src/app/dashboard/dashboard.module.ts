@@ -8,7 +8,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import { RouterModule } from '@angular/router';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 @NgModule({
   declarations: [
     TopbarComponent,
@@ -23,6 +24,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
   ],
   imports: [
     CommonModule,
+    RouterModule,
+    DashboardRoutingModule,
     MatMenuModule,
     MatButtonModule,
     MatSlideToggleModule

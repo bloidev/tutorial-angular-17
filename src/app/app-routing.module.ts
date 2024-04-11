@@ -1,15 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './dashboard/pages/home-page/home-page.component';
-import { UserProfileComponent } from './dashboard/pages/user-profile/user-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
-const routes: Routes = [
-  {path: '', component: HomePageComponent},
-  {path: 'profile', component: UserProfileComponent}
+const routes: Routes = [  
+  {
+    path: '',
+    loadChildren: () => import('./landing/landing.module').then((m) => m.LandingModule),
+  },
+  {
+    path: 'dashboard',
+    pathMatch: 'full',
+    redirectTo: 'dashboard/home-page',
+  },
+  {
+    path: 'dashboard', 
+    loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
+    path: 'error-404',
+    component: NotFoundComponent
+  }
+  // ,{
+  //   path: '**',
+  //   redirectTo: 'error-404'
+  // }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

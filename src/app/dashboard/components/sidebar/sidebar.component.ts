@@ -9,7 +9,7 @@ import { MenuItems } from '../../interfaces/menu-items';
 export class SidebarComponent {
 
   public menuItems : MenuItems[] = [
-    {title: 'Dashboard', icon: 'dashboard', link: '/'},
+    {title: 'Dashboard', icon: 'dashboard', link: '/dashboard'},
     {title: 'Mi Perfil', icon: 'people', link: '/profile'},
   ];
   
