@@ -8,8 +8,9 @@ import { SharedModule } from './shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthModule } from './auth/auth.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule,
     DashboardModule,
     SharedModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    RouterModule
   ],
   providers: [
     provideAnimationsAsync()

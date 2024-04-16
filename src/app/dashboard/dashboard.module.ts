@@ -10,13 +10,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { TeamsComponent } from './pages/teams/teams.component';
 @NgModule({
   declarations: [
     TopbarComponent,
     HomePageComponent,
     UserProfileComponent,
     SidebarComponent,
-    LayoutComponent
+    LayoutComponent,
+    TeamsComponent
   ],
   exports:[
     HomePageComponent,

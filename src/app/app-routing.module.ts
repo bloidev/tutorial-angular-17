@@ -4,26 +4,23 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [  
   {
-    path: '',
-    loadChildren: () => import('./landing/landing.module').then((m) => m.LandingModule),
-  },
-  {
     path: 'dashboard',
     pathMatch: 'full',
     redirectTo: 'dashboard/home-page',
-  },
+  },  
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },  
+  {
+    path: '',
+    loadChildren: () => import('./landing/landing.module').then((m) => m.LandingModule),
+  },  
   {
     path: 'dashboard', 
     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
-  },
-  {
-    path: 'error-404',
-    component: NotFoundComponent
-  }
-  // ,{
-  //   path: '**',
-  //   redirectTo: 'error-404'
-  // }
+  }, 
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
