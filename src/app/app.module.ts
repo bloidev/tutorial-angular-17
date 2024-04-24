@@ -11,6 +11,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RouterModule } from '@angular/router';
     DashboardModule,
     SharedModule,
     MatSlideToggleModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

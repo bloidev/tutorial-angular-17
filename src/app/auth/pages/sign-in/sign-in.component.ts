@@ -6,28 +6,33 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   selector: 'auth-sign-in',
   templateUrl: './sign-in.component.html'
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent {
   
-  public loginForm !: FormGroup;
-
   constructor(
-    private formBuilder : FormBuilder
-    // private userService : UserService
+    private fb : FormBuilder,
+    private userService : UserService
   ){}
 
-  ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      email: new FormControl('',[Validators.required]),
-      password: new FormControl('',[Validators.required])
-    });
-
-
-  }
+  public loginForm = this.fb.group({
+    "email": ['',Validators.required],
+    "pass": ['',[Validators.required]]
+  });
+  
+  get email() { return this.loginForm.get('email') as FormControl; }
+  get pass() { return this.loginForm.get('pass') as FormControl; }
  
   public handleSubmit() : void {    
     console.log("handleSubmit", 'logger')
     if(this.loginForm.valid){
       console.log(this.loginForm.value)
+
+      //subscribe ejecuta la peticion      
+      const token = this.userService
+        .SignIn(this.loginForm.value as { email: string; pass: string })
+        .subscribe( res => {
+          console.log(res)
+        });
+ 
     }
   }
 }

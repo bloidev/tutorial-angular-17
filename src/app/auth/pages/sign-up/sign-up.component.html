@@ -1,1 +1,31 @@
-<p>sign-up works!</p>
+<div class="flex flex-col justify-center items-center h-screen">
+    <h4 class=" text-center my-4 text-2xl text-purple-800">Registrarse</h4>
+    <div class="shadow-sm shadow-slate-800 w-[300px] h-[300px] p-4 rounded">
+        <form [formGroup]="registerForm" (submit)="handleSubmit()" class="flex flex-col gap-2" autocomplete="off">
+            <div class="flex flex-col flex-grow">
+                <label for="" class=" text-sm">Nombre</label>
+                <input 
+                class="border border-gray-300 p-2 rounded-sm outline-purple-800 placeholder:text-xs"
+                type="text" formControlName="name" name="name" placeholder="Ingresa tu Nombre"/>
+                <span class="text-red-500">{{name?.getError("required") && "campo requerido"}}</span>
+            </div>
+            <div class="flex flex-col flex-grow">
+                <label for="" class="  text-sm">Correo</label>
+                <input 
+                class="border border-gray-300 p-2 rounded-sm outline-purple-800 placeholder:text-xs"
+                type="text" name="email" formControlName="email" placeholder="Ingresa tu Correo"/>
+                <span class="text-red-500">{{email?.errors | json}}</span>
+            </div>
+            <div class="flex flex-col flex-grow">
+                <label for="" class="  text-sm">Contraseña</label>
+                <input 
+                class="border border-gray-300 p-2 rounded-sm outline-purple-800 placeholder:text-xs"
+                type="password" name="pass" formControlName="pass" placeholder="Ingresa tu Clave"/>
+                <span class="text-red-500">{{pass?.errors | json}}</span>
+            </div>
+            <div class="flex flex-row justify-center my-4">
+                <button type="submit" class="bg-purple-800 p-2 rounded-md w-6/12 text-white">REGISTRARSE</button>
+            </div>
+        </form> 
+    </div>
+</div>
