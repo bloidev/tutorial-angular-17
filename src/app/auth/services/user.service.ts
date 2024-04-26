@@ -4,13 +4,13 @@ import { Observable } from 'rxjs';
 import { IUserCredentials, IUser } from '../interfaces/user';
 import { HttpClient } from '@angular/common/http';
 
-
 const API_URL = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+
   constructor(
     private http: HttpClient
   ) {}
